@@ -1,0 +1,34 @@
+name: windows
+
+on:
+  
+  workflow_dispatch:
+
+jobs:
+ 
+  build-windows-cygwin:
+    name: "🪟 Build on Windows with Cygwin"
+    runs-on: windows-latest
+
+    steps:
+    - run: git config --global core.autocrlf input
+    - uses: actions/checkout@v4
+    - uses: cygwin/cygwin-install-action@v4
+      with:
+        packages: >-
+          autoconf
+          automake
+          zip
+          gcc-core
+          gcc-g++
+          gdb
+          make
+          wget
+          
+    - name: Build exe
+      shell: C:\cygwin\bin\bash.exe -eo pipefail '{0}'
+      run: >-
+        ./Scripts/install-mingw-w64-depends.sh
+        make TARGET=PC distrib
+        
+          
