@@ -1,3 +1,4 @@
-IfEq ($ (CONFIG_PC), y)
-      TCPATH: =
+ifeq ($(CONFIG_PC),y)
+      TCPATH :=
 endif
+
