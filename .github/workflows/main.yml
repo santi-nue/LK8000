@@ -16,13 +16,10 @@ jobs:
     - uses: cygwin/cygwin-install-action@v4
       with:
         packages: >-
-          autoconf
-          automake
-          zip
-          gcc-core
-          gcc-g++
-          gdb
           make
+          mingw64-i686-gcc-g++
+          zip
+          gdb
           wget
           
     - name: Build exe
