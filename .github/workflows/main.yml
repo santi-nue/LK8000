@@ -26,6 +26,7 @@ jobs:
       shell: C:\cygwin\bin\bash.exe -eo pipefail '{0}'
       run: >-
         ./Scripts/install-mingw-w64-depends.sh &&
-        make TARGET=PC distrib
+        make TARGET=PC
+        
         
           
