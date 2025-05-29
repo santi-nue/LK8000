@@ -213,7 +213,7 @@ ifeq ($(CONFIG_PPC2002),y)
  MCPU   := -mcpu=$(CPU)
 endif
 
--include local.mk
+include local.mk
 include build/pkgconfig.mk
 
 ############# platform info
