@@ -21,6 +21,7 @@ jobs:
           zip
           gdb
           wget
+          perl
           
     - name: Build exe
       shell: C:\cygwin\bin\bash.exe -eo pipefail '{0}'
